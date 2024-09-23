@@ -1,6 +1,6 @@
 <ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar color="medium">
-    <ion-title>SkeletonAPP</ion-title>
+    <ion-title>RegistrAPP</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -19,7 +19,7 @@
       <ion-input label="Apellido" [(ngModel)]="lastname"></ion-input>
     </ion-item>
     <ion-item lines="none">
-      <ion-select label="N. Ed." [(ngModel)]="edLevel">
+      <ion-select label="Carrera" [(ngModel)]="edLevel">
         <ion-select-option *ngFor="let level of edLevels | keyvalue" 
         value="{{level.key}}">{{level.value}}</ion-select-option>
       </ion-select>
@@ -36,14 +36,14 @@
       </ion-popover>
     </ion-item>
     <ion-item lines="none">
-      <ion-button (click)="clean()">Limpiar</ion-button>
-      <ion-button id="alert_show">Mostrar (componente)</ion-button>
-      <ion-button (click)="showAlert()">Mostrar (controller) </ion-button>
+      <ion-button (click)="clean()">Borrar todo</ion-button>
+      <ion-button id="alert_show">Mostrar </ion-button>
+      <ion-button (click)="showAlert()">Mostrar  </ion-button>
       <ion-alert
         trigger="alert_show"
         header="Usuario"
         subHeader="Datos del usuario"
-        message="Su nombre es {{name}} {{lastname}}"
+        message="Su nombre es {{name}} {{lastname}} "
       ></ion-alert>
     </ion-item>
   </ion-list>
@@ -51,6 +51,6 @@
 
 <ion-footer>
   <ion-toolbar color="medium">
-    <ion-title>APP Dessarollada por Alex cayuqueo & Jhustin page</ion-title>
+    <ion-title>APP en desarrollo...</ion-title>
   </ion-toolbar>
 </ion-footer>

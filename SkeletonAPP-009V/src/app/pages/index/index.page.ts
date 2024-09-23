@@ -25,9 +25,9 @@ export class IndexPage implements OnInit {
       console.log(`Username: ${state['user']}`)
       this.username = state['user']
     }
-    this.edLevels.set('0', 'Basica');
-    this.edLevels.set('1', 'Media');
-    this.edLevels.set('2', 'Superior');
+    this.edLevels.set('0', 'Ing. informatica ');
+    this.edLevels.set('1', 'Analista programador');
+    this.edLevels.set('2', 'Animacion digital');
   }
 
   ngOnInit() {

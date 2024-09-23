@@ -23,8 +23,8 @@ export class HomePage {
     private toastController: ToastController,
     private loginService: LoginService
   ) {
-    this.mainTitle = 'SkeletonAPP-009V';
-    this.subTitle = 'Aqui comienza';
+    this.mainTitle = 'RegistrAPP';
+    this.subTitle = 'Duoc uc';
     this.welcomeMessage = 'Bienvenido'
   }
 

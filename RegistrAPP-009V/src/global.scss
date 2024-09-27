@@ -36,10 +36,27 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 /* @import "@ionic/angular/css/palettes/dark.system.css"; */
 
-html, body, ion-app, ion-content {
-    color: white; /* Color del texto para asegurar visibilidad */
-    --ion-background-color: #abb2b9; /* Variable CSS de Ionic para fondo */
+html, body, ion-app, ion-content,ion-input {
+    color: white ; /* Color del texto para asegurar visibilidad */
+    --ion-background-color:black; /* Variable CSS de Ionic para fondo */
   }
+
+  .dark-theme {
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto en blanco */
+  }
+  
+  .dark-theme ion-title,
+  .dark-theme ion-item,
+  .dark-theme ion-input,
+  .dark-theme ion-select,
+  .dark-theme ion-button {
+    color: white; /* Asegura que todo el texto dentro de estos elementos sea blanco */
+  }
+
+.toolbar {
+  color: #f9ae43;
+}
     
 ion-button { /* Color de botones */
     --background: #f9ae43; 
@@ -47,7 +64,10 @@ ion-button { /* Color de botones */
     --border-radius: 10px; 
     --padding: 10px 20px;  
   }
-  
+
+.ion-text-center{
+  color: white;
+}
   
 
   

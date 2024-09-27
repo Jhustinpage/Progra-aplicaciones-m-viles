@@ -18,7 +18,6 @@
   font-size: 16px;
   line-height: 22px;
 
-  color: #8c8c8c;
 
   margin: 0;
 }
@@ -31,9 +30,22 @@ h1 {
   font-weight: bolder;
   font-size: xx-large;
   margin-bottom: 0%;
+  color: white;
 }
 
 h6 {
   margin-top: 0%;
+  color: white;
 }
 
+.username{
+  color: white;
+}
+
+.password{
+  color: white;
+}
+
+.welcomeMessage{
+  color: white;
+}

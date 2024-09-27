@@ -12,11 +12,11 @@ export class LoginService {
       password: "12345"
     },
     {
-      username: "cmartinezs",
+      username: "usuario1",
       password: "12345"
     },
     {
-      username: "other",
+      username: "usuario2",
       password: "12345"
     }
   ]

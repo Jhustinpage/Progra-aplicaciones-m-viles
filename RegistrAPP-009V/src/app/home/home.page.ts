@@ -24,7 +24,7 @@ export class HomePage {
     private loginService: LoginService
   ) {
     this.mainTitle = 'RegistrAPP';
-    this.subTitle = 'Duoc uc';
+    this.subTitle = 'DuocUC';
     this.welcomeMessage = 'Bienvenido'
   }
 

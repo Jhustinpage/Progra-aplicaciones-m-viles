@@ -25,13 +25,18 @@
       labelPlacement="floating" class="password"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-button (click)="validateLogin()"
-  expand="block" fill="outline">
-    iniciar sesion
+  
+  <ion-button class="centered-button" (click)="validateLogin()" fill="outline">
+    Iniciar Sesión
   </ion-button>
-  <ion-button [routerLink]="['/reset-password']" expand="block" fill="outline">
+
+
+  <ion-item-divider>
+  <ion-router-link class="centered-link" [routerLink]="['/reset-password']" expand="block" fill="outline">
     Restablecer Contraseña
-  </ion-button>
+  </ion-router-link>
+  </ion-item-divider>
+
 </ion-content>
 
 

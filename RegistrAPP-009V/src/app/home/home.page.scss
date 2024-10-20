@@ -40,12 +40,30 @@ h6 {
 
 .username{
   color: white;
+  background: linear-gradient(to left, transparent, rgb(24, 24, 24));
+  border-radius: 10px ;
 }
+
 
 .password{
   color: white;
+  background: linear-gradient(to left, transparent, rgb(24, 24, 24));
+  border-radius: 10px ;
+  padding: 10px;
 }
 
 .welcomeMessage{
   color: white;
+}
+
+.centered-button {
+  width: 270px; /* Fija el ancho del botón */
+  margin: 0 auto; /* Centra el botón horizontalmente */
+  display: block; /* Asegura que el botón se comporte como un bloque */
+}
+
+.centered-link{
+  margin: 15px auto;
+  display: block;
+  color: #f9ae43;
 }

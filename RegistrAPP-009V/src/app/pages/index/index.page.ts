@@ -7,8 +7,9 @@ import { StorageService } from 'src/app/services/storage.service';
 @Component({
   selector: 'app-index',
   templateUrl: './index.page.html',
-  styleUrls: ['./index.page.scss'],
+  styleUrls: ['./index.page.scss']
 })
+
 export class IndexPage implements OnInit {
 
   username: string = 'guest';

@@ -17,15 +17,19 @@
   <ion-list>
     <ion-item>
       <ion-input [(ngModel)]="username" label="Usuario" 
-      labelPlacement="floating" class="username"></ion-input>
+      labelPlacement="floating" fill="outline" class="username" placeholder="Ingresa tu usuario"></ion-input>
     </ion-item>
+
+    <br>
+
     <ion-item>
       <ion-input type="password" [(ngModel)]="password" 
       label="Contraseña" 
-      labelPlacement="floating" class="password"></ion-input>
+      labelPlacement="floating" fill="outline" class="password" placeholder="Ingresa tu contraseña"></ion-input>
     </ion-item>
   </ion-list>
   
+  <br>
   <ion-button class="centered-button" (click)="validateLogin()" fill="outline">
     Iniciar Sesión
   </ion-button>

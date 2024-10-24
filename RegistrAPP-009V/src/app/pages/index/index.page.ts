@@ -4,6 +4,7 @@ import { AlertController } from '@ionic/angular';
 import { UserData } from 'src/app/models/user-data';
 import { StorageService } from 'src/app/services/storage.service';
 
+
 @Component({
   selector: 'app-index',
   templateUrl: './index.page.html',

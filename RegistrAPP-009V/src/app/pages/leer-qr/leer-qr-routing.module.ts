@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+
 import { LeerQrPage } from './leer-qr.page';
 
 const routes: Routes = [

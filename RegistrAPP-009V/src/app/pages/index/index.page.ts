@@ -1,80 +1,64 @@
 import { Component, OnInit } from '@angular/core';
+import { WeatherService } from '../../services/weather.service';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
-import { UserData } from 'src/app/models/user-data';
 import { StorageService } from 'src/app/services/storage.service';
-
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.page.html',
-  styleUrls: ['./index.page.scss']
+  styleUrls: ['./index.page.scss'],
 })
-
 export class IndexPage implements OnInit {
-
+  weatherData: any = {}; // Inicializar como objeto vacío
   username: string = 'guest';
-  name!: string;
-  lastname!: string;
-  edLevel!: string;
-  birthday!: string;
-  edLevels: Map<string, string> = new Map<string, string>
+  name: string = '';
+  lastname: string = '';
+  welcomeMessage: string = ''; // Mensaje de bienvenida
 
   constructor(
+    private weatherService: WeatherService,
     private router: Router,
-    private alertController: AlertController,
     private storageService: StorageService
   ) {
     const state = this.router.getCurrentNavigation()?.extras.state;
-    if(state){
-      console.log(`Username: ${state['user']}`)
-      this.username = state['user']
+    if (state) {
+      console.log(`Username: ${state['user']}`);
+      this.username = state['user'];
     }
-    this.edLevels.set('0', 'Basica');
-    this.edLevels.set('1', 'Media');
-    this.edLevels.set('2', 'Superior');
   }
 
   ngOnInit() {
-    const promise = this.storageService.get(`user_data_${this.username}`);
-    console.log("promise: ", promise);
-    if(promise !== undefined){
-      promise.then((data) => {
-        console.log("user_data: ", data);
-        if(data !== null){
-          this.name = data.name;
-          this.lastname = data.lastname;
-          this.edLevel = data.edLevel;
-          this.birthday = data.birthday;
-        }
-      });
+    this.fetchWeatherData();
+    this.loadUserData();
+  }
+
+  fetchWeatherData() {
+    const latitude = -33.4777; 
+    const longitude = -70.5153;
+
+    this.weatherService.getWeatherData(latitude, longitude).subscribe(
+      data => {
+        this.weatherData = data;
+        console.log(this.weatherData);
+      },
+      error => {
+        console.error('Error al obtener datos meteorológicos', error);
+      }
+    );
+  }
+
+  async loadUserData() {
+    try {
+      const data = await this.storageService.get(`user_data_${this.username}`);
+      if (data) {
+        this.name = data.name;
+        this.lastname = data.lastname;
+        this.welcomeMessage = `¡Bienvenido ${this.name} ${this.lastname}!`;
+      } else {
+        this.welcomeMessage = `¡Bienvenido ${this.username}!`; // Mensaje en el caso de no encontrar los datos
+      }
+    } catch (error) {
+      console.error('Error al cargar datos del usuario:', error);
     }
-  }
-
-  clean(){
-    this.name = '';
-    this.lastname = '';
-    this.edLevel = '';
-    this.birthday = '';
-  }
-
-  save() {
-    const userData = new UserData(this.name, this.lastname, this.edLevel, this.birthday);
-    const promise = this.storageService.set(`user_data_${this.username}`, userData);
-    if(promise !== undefined){
-      promise.then(() => {
-        console.log('Datos guardados')
-      })
-    }
-  }
-
-  async showAlert(){
-    const alert = await this.alertController.create({
-      header: "Usuario",
-      subHeader: "Datos del usuario",
-      message: `Los datos del usuario son ${this.name} ${this.lastname}`
-    })
-    alert.present();
   }
 }
-

@@ -16,11 +16,11 @@
 
       <ion-item color="white" lines="full" [routerLink]="['/configuracion']">
         <ion-icon color="white"  name="construct" slot="start"></ion-icon>
-        <ion-label class="toolbar-color">Configuracion</ion-label>
+        <ion-label class="toolbar-color">Configuración</ion-label>
       </ion-item>
 
       <ion-item color="white" lines="full" [routerLink]="['/leer-qr']">
-        <ion-icon color= "white" name="qr-code" slot="start"></ion-icon>
+        <ion-icon color="white" name="qr-code" slot="start"></ion-icon>
         <ion-label class="toolbar-color">Leer QR</ion-label>
       </ion-item>
 
@@ -36,15 +36,22 @@
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-menu-button color= "light"></ion-menu-button>
+          <ion-menu-button color="light"></ion-menu-button>
         </ion-buttons>
-        <ion-title color= "light">Menu</ion-title>
+        <!-- Mostrar la temperatura solo si existe `weatherData.current_weather` -->
+        <ion-title color="light">
+          <strong>Temperatura Actual:</strong> 
+          <ng-container *ngIf="weatherData?.current_weather">
+            {{ weatherData.current_weather.temperature }} °C
+          </ng-container>
+        </ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content class="ion-padding">
+      <!-- Mensaje de bienvenida -->
       <ion-item lines="none">
-        ¡Bienvenido {{username}}!
+        {{ welcomeMessage }}
       </ion-item>
     </ion-content>
   </div>

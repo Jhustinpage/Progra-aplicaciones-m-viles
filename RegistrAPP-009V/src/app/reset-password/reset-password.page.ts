@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-reset-password',
@@ -7,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResetPasswordPage  {
 
-  constructor() { }
+  constructor(
+    private navCtrl: NavController
+  ) {}
 
   resetPassword() {
     console.log('Se ha enviado un correo para restablecer la contraseña')
   }
 
+  goBack() {
+    this.navCtrl.back();
+  }
 
 }

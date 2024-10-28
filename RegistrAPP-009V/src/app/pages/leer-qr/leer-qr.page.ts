@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Barcode, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-leer-qr',
@@ -11,7 +11,10 @@ export class LeerQrPage implements OnInit {
   isSupported = false;
   barcodes: Barcode[] = [];
 
-  constructor(private alertController: AlertController) {}
+  constructor(
+    private alertController: AlertController,
+    private navCtrl: NavController //  NavController 
+  ) {}
 
   ngOnInit() {
     BarcodeScanner.isSupported().then((result) => {
@@ -44,4 +47,7 @@ export class LeerQrPage implements OnInit {
     await alert.present();
   }
 
+  goBack() {
+    this.navCtrl.back(); // regresar a la página anterior
+  }
 }

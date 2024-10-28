@@ -32,10 +32,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule), canActivate: [ DbService]
   },
   { path: '', loadChildren: () => import('./home/home.module').then(m => m.HomePageModule) , canActivate: [ DbService] },
-  { path: 'reset-password', loadChildren: () => import('./reset-password/reset-password.module').then(m => m.ResetPasswordPageModule) , canActivate: [ DbService]},
+  { path: 'reset-password', loadChildren: () => import('./reset-password/reset-password.module').then(m => m.ResetPasswordPageModule)},
   {
     path: 'reset-password',
-    loadChildren: () => import('./reset-password/reset-password.module').then( m => m.ResetPasswordPageModule) , canActivate: [ DbService]
+    loadChildren: () => import('./reset-password/reset-password.module').then( m => m.ResetPasswordPageModule) 
   },
   {
     path: 'cuenta',

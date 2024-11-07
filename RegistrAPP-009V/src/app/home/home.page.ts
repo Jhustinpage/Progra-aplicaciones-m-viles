@@ -3,7 +3,6 @@ import { NavigationExtras, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { LoginService } from '../services/login.service';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -25,21 +24,23 @@ export class HomePage {
   ) {
     this.mainTitle = 'RegistrAPP';
     this.subTitle = 'DuocUC';
-    this.welcomeMessage = 'Bienvenido'
+    this.welcomeMessage = 'Bienvenido';
   }
 
-  validateLogin(){
-    console.log("Ejecutando validacion!")
-    if(
-      this.loginService.validateLogin(this.username, this.password)
-    ) {
-      this.showToastMessage('Inicio de sesion valido', 'success')
+  async validateLogin() {
+    console.log("Ejecutando validacion!");
+
+    // Espera la resolución de validateLogin usando await
+    const isValidLogin = await this.loginService.validateLogin(this.username, this.password);
+
+    if (isValidLogin) {
+      this.showToastMessage('Inicio de sesión válido', 'success');
       this.welcomeMessage = `Bienvenido ${this.username}`;
 
       const extras = this.createExtrasUser(this.username);
       this.router.navigate(['/index'], extras);
     } else {
-      this.showToastMessage('Inicio de sesion invalido', 'danger')
+      this.showToastMessage('Inicio de sesión inválido', 'danger');
     }
   }
 
@@ -51,13 +52,13 @@ export class HomePage {
     }
   }
 
-  async showToastMessage(text: string, msgColor: string){
+  async showToastMessage(text: string, msgColor: string) {
     const toast = await this.toastController.create({
       message: text,
       color: msgColor,
       position: 'bottom',
       duration: 3000
-    })
+    });
     toast.present();
   }
 }

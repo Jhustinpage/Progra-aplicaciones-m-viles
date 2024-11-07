@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { DbService } from './services/db.service';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
@@ -25,33 +26,33 @@ const routes: Routes = [
   },
   {
     path: 'index',
-    loadChildren: () => import('./pages/index/index.module').then( m => m.IndexPageModule)
+    loadChildren: () => import('./pages/index/index.module').then( m => m.IndexPageModule), canActivate: [AuthGuard]
   },
   {
     path: 'profile',
-    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule), canActivate: [AuthGuard]
   },
   { path: '', loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)  },
-  { path: 'reset-password', loadChildren: () => import('./reset-password/reset-password.module').then(m => m.ResetPasswordPageModule)},
+  { path: 'reset-password', loadChildren: () => import('./reset-password/reset-password.module').then(m => m.ResetPasswordPageModule) },
   {
     path: 'reset-password',
-    loadChildren: () => import('./reset-password/reset-password.module').then( m => m.ResetPasswordPageModule) 
+    loadChildren: () => import('./reset-password/reset-password.module').then( m => m.ResetPasswordPageModule) , canActivate: [AuthGuard]
   },
   {
     path: 'cuenta',
-    loadChildren: () => import('./pages/cuenta/cuenta.module').then( m => m.CuentaPageModule)
+    loadChildren: () => import('./pages/cuenta/cuenta.module').then( m => m.CuentaPageModule), canActivate: [AuthGuard]
   },
   {
     path: 'configuracion',
-    loadChildren: () => import('./pages/configuracion/configuracion.module').then( m => m.ConfiguracionPageModule)
+    loadChildren: () => import('./pages/configuracion/configuracion.module').then( m => m.ConfiguracionPageModule), canActivate: [AuthGuard]
   },
   {
     path: 'leer-qr',
-    loadChildren: () => import('./pages/leer-qr/leer-qr.module').then( m => m.LeerQrPageModule)
+    loadChildren: () => import('./pages/leer-qr/leer-qr.module').then( m => m.LeerQrPageModule), canActivate: [AuthGuard]
   },
   {
     path: 'e404',
-    loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
+    loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule), canActivate: [AuthGuard]
   },
   {
     path: '**',

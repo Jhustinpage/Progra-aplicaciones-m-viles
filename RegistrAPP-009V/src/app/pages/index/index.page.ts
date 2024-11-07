@@ -61,4 +61,15 @@ export class IndexPage implements OnInit {
       console.error('Error al cargar datos del usuario:', error);
     }
   }
+
+  // Método para cerrar sesión
+  async logout() {
+    try {
+      await this.storageService.remove(`user_data_${this.username}`); // Limpia los datos del usuario en el storage
+      localStorage.removeItem('auth_token'); // Remueve el token de autenticación
+      this.router.navigate(['/login']); // Redirige a la página de inicio de sesión
+    } catch (error) {
+      console.error('Error al cerrar sesión:', error);
+    }
+  }
 }

@@ -51,8 +51,19 @@
     <ion-content class="ion-padding">
       <!-- Mensaje de bienvenida -->
       <ion-item lines="none">
-        {{ welcomeMessage }}
+        <strong>{{ welcomeMessage }}</strong>
       </ion-item>
+      
+<!-- carrusel de imagenes -->
+      <swiper-container
+      autoplay="true"
+      loop="true"
+      delay="3000" 
+      speed="1000"> <!-- delay = 3000 milisegundos = 3 segundos -->
+                    <!-- 1000 milisegundos = 1 segundo para la transición -->
+      <swiper-slide><img src="assets/images/Sobre-DuocUC.png"></swiper-slide> 
+      <swiper-slide><img src="assets/images/Solicitud-en-linea.png"></swiper-slide>
+      </swiper-container>
     </ion-content>
   </div>
 

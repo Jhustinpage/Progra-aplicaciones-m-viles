@@ -3,11 +3,15 @@ import { WeatherService } from '../../services/weather.service';
 import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
 
+
 @Component({
   selector: 'app-index',
   templateUrl: './index.page.html',
   styleUrls: ['./index.page.scss'],
 })
+
+
+
 export class IndexPage implements OnInit {
   weatherData: any = {}; // Inicializar como objeto vacío
   username: string = 'guest';

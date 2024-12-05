@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { IndexPageRoutingModule } from './index-routing.module';
 
 import { IndexPage } from './index.page';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    IndexPageRoutingModule
+    IndexPageRoutingModule,
   ],
-  declarations: [IndexPage]
+  declarations: [IndexPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class IndexPageModule {}

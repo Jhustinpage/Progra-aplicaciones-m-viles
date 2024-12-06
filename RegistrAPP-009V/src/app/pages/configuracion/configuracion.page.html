@@ -16,18 +16,21 @@
     </ion-toolbar>
   </ion-header>
 
-  <div>
-    <h2 style="color: #ffffff;">Opciones de Configuración</h2>
-    <ion-list>
-      <ion-item>
-        <ion-label>Opción 1</ion-label>
-        <ion-toggle slot="end"></ion-toggle>
-      </ion-item>
-      <ion-item>
-        <ion-label>Opción 2</ion-label>
-        <ion-toggle slot="end"></ion-toggle>
-      </ion-item>
-      <!-- Más opciones aquí -->
-    </ion-list>
-  </div>
+<ion-content color="dark">
+  <ion-list>
+  <ion-item>
+    <ion-toggle>
+      <ion-label>Recibir notificaciones</ion-label>
+      <ion-note color="medium">Desactiva esta opcion en cualquier momento.</ion-note>
+    </ion-toggle>
+  </ion-item>
+</ion-list>
+
+<ion-list [inset]="true">
+  <ion-item>
+    <ion-textarea label="Comments" labelPlacement="floating" rows="5"></ion-textarea>
+  </ion-item>
+</ion-list>
+</ion-content>
+
 </ion-content>

@@ -7,10 +7,10 @@ import { User } from '../models/user';
 })
 export class LoginService {
 
-  users: User[] = [
-    { username: "admin", password: "12345" },
-    { username: "usuario1", password: "12345" },
-    { username: "usuario2", password: "12345" }
+  users: { username: string; password: string; carrera: string }[] = [
+    { username: "admin", password: "12345", carrera: "Administrador del Sistema" },
+    { username: "Jhustin", password: "12345", carrera: "Ingenieria en Informatica" },
+    { username: "usuario2", password: "12345", carrera: "Diseño grafico" }
   ];
 
   constructor() {}
@@ -20,6 +20,7 @@ export class LoginService {
     if (user) {
       console.log(`Usuario encontrado: ${u}`);
       localStorage.setItem('auth_token', 'true'); // Marca al usuario como autenticado
+      localStorage.setItem('user_data', JSON.stringify(user)); // Guarda los datos del usuario
       return true;
     }
     console.log(`Usuario no encontrado: ${u}`);
@@ -28,9 +29,15 @@ export class LoginService {
 
   logout(): void {
     localStorage.removeItem('auth_token'); // Remueve el token de autenticación
+    localStorage.removeItem('user_data'); // Remueve los datos del usuario
   }
 
   isLoggedIn(): boolean {
     return localStorage.getItem('auth_token') === 'true'; // Verifica si hay un token válido
+  }
+
+  getUserData(): { username: string; carrera: string } | null {
+    const userData = localStorage.getItem('user_data');
+    return userData ? JSON.parse(userData) : null; // Retorna los datos del usuario o null
   }
 }

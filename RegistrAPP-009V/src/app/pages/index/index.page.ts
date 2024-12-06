@@ -18,6 +18,7 @@ export class IndexPage implements OnInit {
   name: string = '';
   lastname: string = '';
   welcomeMessage: string = ''; // Mensaje de bienvenida
+  currentTime: string = '';
 
   constructor(
     private weatherService: WeatherService,
@@ -34,7 +35,16 @@ export class IndexPage implements OnInit {
   ngOnInit() {
     this.fetchWeatherData();
     this.loadUserData();
+    this.updateTime();
   }
+
+// Método para obtener la hora actual
+updateTime() {
+  setInterval(() => {
+    const now = new Date();
+    this.currentTime = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+  }, 1000);
+}
 
   fetchWeatherData() {
     const latitude = -33.4777; 

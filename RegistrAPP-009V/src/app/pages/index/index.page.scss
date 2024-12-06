@@ -17,6 +17,16 @@ ion-menu::part(backdrop) {
   color: #fdfdfd;
 }
 
+.slide-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
 
 
 

@@ -1,0 +1,15 @@
+ion-content {
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    height: 100vh;            /* Asegura que ocupe toda la altura de la pantalla */
+  }
+  
+  .avatar-container {
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente el contenido */
+    align-items: center;      /* Centra verticalmente el contenido */
+    width: 100%;              /* Asegura que ocupe todo el ancho disponible */
+  }
+  
+  

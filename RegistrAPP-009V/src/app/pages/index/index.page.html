@@ -60,10 +60,46 @@
       loop="true"
       delay="3000" 
       speed="1000"> <!-- delay = 3000 milisegundos = 3 segundos -->
-                    <!-- 1000 milisegundos = 1 segundo para la transición -->
-      <swiper-slide><img src="assets/images/Sobre-DuocUC.png"></swiper-slide> 
-      <swiper-slide><img src="assets/images/Solicitud-en-linea.png"></swiper-slide>
+                    <!-- speed = 1000 milisegundos = 1 segundo para la transición -->
+      <swiper-slide>
+        <a href="https://www.duoc.cl/nosotros/sobre-duoc/">
+        <img src="assets/images/Sobre-DuocUC.png">
+        <div class="slide-text">
+          <strong>¿Quieres saber más sobre la institucion?</strong>
+        </div>
+      </a>
+
+      </swiper-slide> 
+
+      <swiper-slide>
+        <a href="https://www.youtube.com/watch?v=olh3G2gZ2kU">
+        <img src="assets/images/Solicitud-en-linea.png">
+        <div class="slide-text">
+          <strong>¿Si necesitas crear una solicitud en linea?, este video puede ayudarte</strong>
+        </div>
+      </a>
+      </swiper-slide>
       </swiper-container>
+
+      <ion-card color="dark">
+        <ion-card-header>
+          <ion-card-title><strong>Hora Actual</strong></ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <strong>{{ currentTime }}</strong>
+        </ion-card-content>
+      </ion-card>
+      
+      <ion-card color="dark">
+        <ion-card-header>
+          <ion-card-title><strong>Frase del Día</strong></ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <em>"El éxito es la suma de pequeños esfuerzos repetidos día tras día."</em>
+        </ion-card-content>
+      </ion-card>
+
+      
     </ion-content>
   </div>
 

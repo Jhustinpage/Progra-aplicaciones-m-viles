@@ -27,6 +27,29 @@ ion-menu::part(backdrop) {
   border-radius: 5px;
 }
 
+/* Asegura que el título sea legible y bien posicionado */
+.title-label {
+  font-size: 1.2rem; /* Puedes ajustar el tamaño de la fuente */
+  font-weight: bold;
+}
+
+/* Ajuste de tamaño para la temperatura */
+.temperature-text {
+  font-size: 1.5rem; /* Tamaño de fuente grande para la temperatura */
+  color: #ff6b6b; /* Un color agradable para resaltar la temperatura */
+}
+
+/* Hacer el texto responsivo */
+@media (max-width: 576px) {
+  .temperature-text {
+    font-size: 1.2rem; /* Ajuste de tamaño para pantallas pequeñas */
+  }
+  .title-label {
+    font-size: 1rem; /* Ajuste de tamaño en pantallas pequeñas */
+  }
+}
+
+
 
 
 

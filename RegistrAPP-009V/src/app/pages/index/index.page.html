@@ -39,13 +39,13 @@
           <ion-menu-button color="light"></ion-menu-button>
         </ion-buttons>
         <!-- Mostrar la temperatura solo si existe `weatherData.current_weather` -->
-        <ion-title color="light">
-          <strong>Temperatura Actual:</strong> 
+        <ion-title color="light" style="font-size: 14px;">
+          <ion-label>Temperatura Actual:</ion-label> 
           <ng-container *ngIf="weatherData?.current_weather">
             {{ weatherData.current_weather.temperature }} °C
           </ng-container>
         </ion-title>
-      </ion-toolbar>
+      </ion-toolbar>    
     </ion-header>
 
     <ion-content class="ion-padding">

@@ -1,0 +1,31 @@
+# Query: resources
+# ContextLines: 1
+
+7 resultados - Archivos de 4
+
+android\gradlew:
+  57  #   (3) This script is generated from the Groovy template
+  58: #       https://github.com/gradle/gradle/blob/HEAD/subprojects/plugins/src/main/resources/org/gradle/api/internal/plugins/unixStartScript.txt
+  59  #       within the Gradle project.
+
+android\app\src\main\res\values\ic_launcher_background.xml:
+  1  <?xml version="1.0" encoding="utf-8"?>
+  2: <resources>
+  3      <color name="ic_launcher_background">#FFFFFF</color>
+  4: </resources>
+
+android\app\src\main\res\values\strings.xml:
+  1  <?xml version='1.0' encoding='utf-8'?>
+  2: <resources>
+  3      <string name="app_name">RegistrAPP</string>
+
+  6      <string name="custom_url_scheme">io.ionic.starter</string>
+  7: </resources>
+
+android\app\src\main\res\values\styles.xml:
+   1  <?xml version="1.0" encoding="utf-8"?>
+   2: <resources>
+   3  
+
+  21      </style>
+  22: </resources>

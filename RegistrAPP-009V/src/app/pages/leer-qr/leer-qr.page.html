@@ -1,16 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title color="light">Scanear QR</ion-title>
+    <ion-title>Scanear QR</ion-title>
     <ion-buttons slot="start">
       <ion-button (click)="goBack()">
-        <ion-icon color="light" name="arrow-back"></ion-icon>
+        <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!-- Lista de códigos escaneados -->
   <ion-list>
     <ion-item *ngFor="let barcode of barcodes">
       <ion-label position="stacked">{{ barcode.format }}</ion-label>
@@ -18,20 +17,7 @@
     </ion-item>
   </ion-list>
 
-  <!-- Mostrar el botón de instalación solo si el módulo no está instalado -->
-  <div *ngIf="!isModuleInstalled">
-    <ion-label color="danger">
-      El módulo de Google Barcode Scanner no está instalado. Instálalo para continuar.
-    </ion-label>
-    <ion-button expand="block" color="primary" (click)="installGoogleBarcodeScannerModule()">
-      Instalar Módulo
-    </ion-button>
-  </div>
-
-  <!-- Botón flotante para escanear QR -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="isModuleInstalled">
-    <ion-fab-button (click)="scan()" [disabled]="!isSupported">
-      <ion-icon name="scan"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  <ion-fab-button (click)="scan()" [disabled]="!isSupported">
+    <ion-icon name="scan"></ion-icon>
+  </ion-fab-button>
 </ion-content>

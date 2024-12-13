@@ -6,6 +6,7 @@ describe('LeerQrPage', () => {
   let component: LeerQrPage;
   let fixture: ComponentFixture<LeerQrPage>;
 
+  
   beforeEach(() => {
     fixture = TestBed.createComponent(LeerQrPage);
     component = fixture.componentInstance;
@@ -15,4 +16,5 @@ describe('LeerQrPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
